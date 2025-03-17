@@ -126,4 +126,25 @@
 - [ ] 支持更多文件格式（如HTML、Markdown等）
 - [ ] 添加内容预览功能
 - [ ] 支持批量抓取多个页面
-- [ ] 添加自定义文件名选项 
+- [ ] 添加自定义文件名选项
+
+## 贡献指南
+
+欢迎对本项目进行贡献！如果您想参与开发，请按照以下步骤操作：
+
+1. Fork本仓库
+2. 创建您的特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交您的更改 (`git commit -m '添加了某某功能'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 开启一个Pull Request
+
+### 代码规范
+
+- 保持代码风格一致
+- 添加必要的注释
+- 遵循Chrome扩展开发的最佳实践
+- 确保代码在最新版本的Chrome浏览器上测试通过
+
+## 许可证
+
+本项目采用MIT许可证 - 详情请参阅 [LICENSE](LICENSE) 文件 
