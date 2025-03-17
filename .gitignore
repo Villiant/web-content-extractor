@@ -1,0 +1,30 @@
+# 操作系统生成的文件
+.DS_Store
+Thumbs.db
+
+# 编辑器和IDE文件
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# 临时文件
+*.log
+*.tmp
+*.bak
+*.swp
+
+# 浏览器扩展打包文件
+*.crx
+*.pem
+*.zip
+
+# 依赖目录
+node_modules/
+
+# 其他不需要提交的文件
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local 

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>网页主内容抓取器</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: 'Microsoft YaHei', Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    h1 {
+      font-size: 18px;
+      margin: 0 0 15px 0;
+      text-align: center;
+      color: #333;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    label {
+      font-size: 14px;
+      color: #555;
+    }
+    input[type="text"] {
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    /* 复选框容器样式 */
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      user-select: none;
+      color: #555;
+    }
+    /* 隐藏默认复选框 */
+    .checkbox-container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+    /* 自定义复选框样式 */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: #eee;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+    /* 鼠标悬停时的背景色 */
+    .checkbox-container:hover input ~ .checkmark {
+      background-color: #ccc;
+    }
+    /* 选中状态的背景色 */
+    .checkbox-container input:checked ~ .checkmark {
+      background-color: #2196F3;
+    }
+    /* 复选框内的对勾 */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    /* 显示对勾 */
+    .checkbox-container input:checked ~ .checkmark:after {
+      display: block;
+    }
+    /* 对勾样式 */
+    .checkbox-container .checkmark:after {
+      left: 7px;
+      top: 3px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+    /* 提示信息样式 */
+    .path-hint, .enhanced-hint {
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+      padding: 5px;
+      background-color: #f8f8f8;
+      border-radius: 4px;
+    }
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+    button {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    #captureBtn {
+      background-color: #4CAF50;
+      color: white;
+      flex-grow: 1;
+    }
+    #captureBtn:hover {
+      background-color: #45a049;
+    }
+    #savePathBtn {
+      background-color: #2196F3;
+      color: white;
+      margin-left: 10px;
+    }
+    #savePathBtn:hover {
+      background-color: #0b7dda;
+    }
+    .shortcut-hint {
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .status {
+      font-size: 13px;
+      color: #666;
+      text-align: center;
+      margin-top: 10px;
+      min-height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>网页主内容抓取器</h1>
+    
+    <div class="form-group">
+      <label for="savePath">保存路径：</label>
+      <input type="text" id="savePath" placeholder="请设置保存文件的文件夹路径">
+    </div>
+    
+    <div class="button-group">
+      <button id="captureBtn">抓取内容</button>
+      <button id="savePathBtn">更改路径</button>
+    </div>
+    
+    <div class="shortcut-hint">
+      快捷键: <span id="shortcutKey">Ctrl+Shift+S (Windows) / Command+Shift+S (Mac)</span>
+    </div>
+    
+    <div id="status" class="status"></div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html> 
